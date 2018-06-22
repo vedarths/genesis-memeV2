@@ -41,6 +41,7 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
     
@@ -120,15 +121,14 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
         let memedImage = generateMemedImage()
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+            // looked this code up from google as it was not cleat from the course material!!
             if completed {
                 self.save(memedImage: memedImage)
+                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
-        
-        if let popoverPresentationController = activityController.popoverPresentationController {
-            popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
-        }
-        present(activityController, animated: true, completion: nil)
+      present(activityController, animated: true, completion: nil)
     }
     
     func save(memedImage: UIImage) {

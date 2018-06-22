@@ -17,10 +17,15 @@ class SentMemeCollectionViewController: UICollectionViewController {
     var memes = [Meme]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupFlowLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
-        setupFlowLayout()
+        self.collectionView?.reloadData()
     }
     
    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,8 +33,11 @@ class SentMemeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionViewCell", for: ((indexPath as NSIndexPath) as IndexPath))
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionViewCell", for: ((indexPath as NSIndexPath) as IndexPath)) as! SentMemeCollectionViewCell
+        let thisMeme = memes[indexPath.row]
+        cell.memeTitle?.text = "\(thisMeme.topText) - \(thisMeme.bottomText)"
+        cell.memeImageView?.image = thisMeme.memedImage
+        cell.memeImageView.contentMode = .scaleAspectFit
         return cell
     }
     
