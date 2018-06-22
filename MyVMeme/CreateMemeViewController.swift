@@ -137,7 +137,10 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
                         bottomText: bottomText.text!,
                         originalImage: imageView.image!,
                         memedImage: memedImage)
-        print(meme.description)
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+
     }
     
     private func generateMemedImage() -> UIImage {
