@@ -107,17 +107,13 @@
 		BE4D9A5C2087D6D1004767EB /* MyVMeme */ = {
 			isa = PBXGroup;
 			children = (
+				BEC907EE20DDC0A200B18898 /* Controllers */,
 				BE4D9A5D2087D6D1004767EB /* AppDelegate.swift */,
-				BE4D9A5F2087D6D1004767EB /* CreateMemeViewController.swift */,
 				BE4D9A612087D6D1004767EB /* Main.storyboard */,
 				BE4D9A642087D6D1004767EB /* Assets.xcassets */,
 				BE4D9A662087D6D1004767EB /* LaunchScreen.storyboard */,
 				BE4D9A692087D6D1004767EB /* Info.plist */,
 				BE6E564320893849004441EF /* Meme.swift */,
-				BEEF3C7720DD8EA70082F3B7 /* SentMemeTableViewController.swift */,
-				BE67F38B20DD98EF00F501DA /* SentMemeCollectionViewController.swift */,
-				BE67F38D20DDA00100F501DA /* SentMemeCollectionViewCell.swift */,
-				BE67F38F20DDA13600F501DA /* SentMemeDetailViewController.swift */,
 			);
 			path = MyVMeme;
 			sourceTree = "<group>";
@@ -138,6 +134,18 @@
 				BE4D9A7F2087D6D1004767EB /* Info.plist */,
 			);
 			path = MyVMemeUITests;
+			sourceTree = "<group>";
+		};
+		BEC907EE20DDC0A200B18898 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE67F38D20DDA00100F501DA /* SentMemeCollectionViewCell.swift */,
+				BE4D9A5F2087D6D1004767EB /* CreateMemeViewController.swift */,
+				BEEF3C7720DD8EA70082F3B7 /* SentMemeTableViewController.swift */,
+				BE67F38B20DD98EF00F501DA /* SentMemeCollectionViewController.swift */,
+				BE67F38F20DDA13600F501DA /* SentMemeDetailViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
