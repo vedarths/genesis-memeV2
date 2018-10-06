@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3XF-tW-HnO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3XF-tW-HnO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -183,7 +182,7 @@
                     <tabBarItem key="tabBarItem" title="Sent Memes Table View" id="q83-FH-fpa" userLabel="Sent Memes Table"/>
                     <navigationItem key="navigationItem" id="6dO-1H-y8N">
                         <barButtonItem key="backBarButtonItem" title="Back" id="zzy-C9-50h"/>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="NQl-da-4TR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NQl-da-4TR">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="fso-uR-nlh"/>
                             </connections>
@@ -204,8 +203,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1v-ah-Qch">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hW-V2-c0U" userLabel="Top Text Field">
+                                <rect key="frame" x="16" y="120" width="343" height="35"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="TOP">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="35" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mzk-xL-Kp8" userLabel="Bottom Text Field">
+                                <rect key="frame" x="16" y="531" width="343" height="35"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGu-yU-Us6" userLabel="Top Navigation Bar">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
@@ -225,10 +243,7 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1B-YE-bmt" userLabel="Bottom Toolbar">
-                                <rect key="frame" x="0.0" y="635" width="375" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Z6a-Vl-MLK"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="IBL-mM-0Ec">
                                         <connections>
@@ -244,45 +259,31 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="O8P-a6-M7M"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hW-V2-c0U" userLabel="Top Text Field">
-                                <rect key="frame" x="16" y="117" width="343" height="41"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mzk-xL-Kp8" userLabel="Bottom Text Field">
-                                <rect key="frame" x="16" y="520" width="343" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="LT2-qD-hZ7"/>
-                                </constraints>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="a1B-YE-bmt" firstAttribute="bottom" secondItem="Z1v-ah-Qch" secondAttribute="bottom" id="0yC-q8-H9m"/>
-                            <constraint firstItem="9hW-V2-c0U" firstAttribute="trailing" secondItem="mzk-xL-Kp8" secondAttribute="trailing" id="2AP-Uc-JfF"/>
-                            <constraint firstItem="9hW-V2-c0U" firstAttribute="leading" secondItem="mzk-xL-Kp8" secondAttribute="leading" id="BGi-TR-B0G"/>
-                            <constraint firstItem="a1B-YE-bmt" firstAttribute="top" secondItem="mzk-xL-Kp8" secondAttribute="bottom" constant="66" id="Cih-8a-mhy"/>
-                            <constraint firstItem="MGu-yU-Us6" firstAttribute="leading" secondItem="a1B-YE-bmt" secondAttribute="leading" id="FF6-ZI-aaT"/>
-                            <constraint firstItem="9hW-V2-c0U" firstAttribute="top" secondItem="MGu-yU-Us6" secondAttribute="bottom" constant="53" id="K4l-ha-cDx"/>
-                            <constraint firstItem="9hW-V2-c0U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OaQ-AJ-Syu"/>
-                            <constraint firstItem="a1B-YE-bmt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Q7X-ZS-YRH"/>
-                            <constraint firstItem="Z1v-ah-Qch" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S1G-YZ-FUa"/>
-                            <constraint firstItem="MGu-yU-Us6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ug4-id-JQy"/>
-                            <constraint firstItem="MGu-yU-Us6" firstAttribute="centerX" secondItem="9hW-V2-c0U" secondAttribute="centerX" id="ZAP-uf-skZ"/>
-                            <constraint firstItem="MGu-yU-Us6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fF7-nv-jIv"/>
-                            <constraint firstAttribute="trailing" secondItem="Z1v-ah-Qch" secondAttribute="trailing" id="fge-lX-wg5"/>
-                            <constraint firstItem="MGu-yU-Us6" firstAttribute="trailing" secondItem="a1B-YE-bmt" secondAttribute="trailing" id="g3H-Be-2bQ"/>
-                            <constraint firstItem="Z1v-ah-Qch" firstAttribute="leading" secondItem="a1B-YE-bmt" secondAttribute="leading" id="hF8-7J-dF4"/>
-                            <constraint firstItem="MGu-yU-Us6" firstAttribute="trailing" secondItem="Z1v-ah-Qch" secondAttribute="trailing" id="kSI-vR-4kK"/>
+                            <constraint firstItem="Z1v-ah-Qch" firstAttribute="top" secondItem="MGu-yU-Us6" secondAttribute="bottom" id="61y-qs-Jin"/>
+                            <constraint firstItem="9hW-V2-c0U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="A3o-Lq-b9u" userLabel="Top Text  Top Space"/>
+                            <constraint firstItem="MGu-yU-Us6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A5Z-39-I84"/>
+                            <constraint firstItem="a1B-YE-bmt" firstAttribute="top" secondItem="Z1v-ah-Qch" secondAttribute="bottom" id="AIj-u1-M5h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mzk-xL-Kp8" secondAttribute="trailing" constant="16" id="LdA-F0-DtV"/>
+                            <constraint firstItem="Z1v-ah-Qch" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RY4-sS-hTn"/>
+                            <constraint firstItem="mzk-xL-Kp8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UUf-Vw-uE6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a1B-YE-bmt" secondAttribute="bottom" id="XNg-GU-5Hn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1B-YE-bmt" secondAttribute="trailing" id="beg-9W-gIj"/>
+                            <constraint firstItem="mzk-xL-Kp8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="511" id="gkR-bh-zIY" userLabel="Bottom Text Top Space"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z1v-ah-Qch" secondAttribute="trailing" id="hOc-it-75F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9hW-V2-c0U" secondAttribute="trailing" constant="16" id="kXk-kl-Jcf"/>
+                            <constraint firstItem="MGu-yU-Us6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nNy-O0-hOd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MGu-yU-Us6" secondAttribute="trailing" id="oEc-FP-vUg"/>
+                            <constraint firstItem="9hW-V2-c0U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qo3-2u-hUG"/>
+                            <constraint firstItem="a1B-YE-bmt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zAZ-5Y-dWU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bottomText" destination="mzk-xL-Kp8" id="n5w-xf-cXz"/>
+                        <outlet property="bottomTextTopSpace" destination="gkR-bh-zIY" id="cA1-hX-AVL"/>
                         <outlet property="bottomToolbar" destination="a1B-YE-bmt" id="Wwk-IG-Kua"/>
                         <outlet property="cameraButton" destination="IBL-mM-0Ec" id="dbz-7r-eLU"/>
                         <outlet property="cancelButton" destination="WZU-3H-0xh" id="RhY-Ls-LvW"/>
@@ -291,6 +292,7 @@
                         <outlet property="shareButton" destination="krT-0k-AEg" id="hDZ-Cx-FMY"/>
                         <outlet property="topNavigationBar" destination="MGu-yU-Us6" id="4Ok-9k-lN4"/>
                         <outlet property="topText" destination="9hW-V2-c0U" id="qJ6-PP-1a2"/>
+                        <outlet property="topTextTopSpace" destination="A3o-Lq-b9u" id="7kT-RG-2bE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
