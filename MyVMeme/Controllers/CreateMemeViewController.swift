@@ -143,7 +143,6 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
             if completed {
                 self.save(memedImage: memedImage)
                 self.dismiss(animated: true, completion: nil)
-                self.navigationController?.popViewController(animated: true)
             }
         }
       present(activityController, animated: true, completion: nil)
@@ -164,7 +163,6 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
     private func generateMemedImage() -> UIImage {
         // Render view to an image
         // hide  toolbar and navbar
-        navigationController?.setNavigationBarHidden(true, animated: false)
         topNavigationBar.isHidden = true
         bottomToolbar.isHidden = true
         
