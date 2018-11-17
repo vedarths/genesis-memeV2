@@ -20,8 +20,10 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topNavigationBar: UINavigationBar!
-    @IBOutlet weak var topTextTopSpace: NSLayoutConstraint!
-    @IBOutlet weak var bottomTextTopSpace: NSLayoutConstraint!
+    
+    @IBOutlet weak var topTextFieldTopSpace: NSLayoutConstraint!
+    @IBOutlet weak var bottomTextFieldTopSpace: NSLayoutConstraint!
+
     let memeTextAttributes:[String: Any] = [
         NSAttributedString.Key.strokeColor.rawValue: UIColor.black /* TODO: fill in appropriate UIColor */,
         NSAttributedString.Key.foregroundColor.rawValue: UIColor.white/* TODO: fill in appropriate UIColor */,
@@ -37,6 +39,7 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
     }
@@ -103,8 +106,8 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
     private func adjustBottomTextPlacing(notification: Notification) {
         let keyboardHeight = getKeyboardHeight(notification)
         //Bottom text field overlaps with keyboard
-        if bottomTextTopSpace.constant + bottomText.frame.height >= view.frame.height - keyboardHeight {
-            view.frame.origin.y = -((bottomTextTopSpace.constant + bottomText.frame.height) - (view.frame.height - keyboardHeight))
+        if bottomTextFieldTopSpace.constant + bottomText.frame.height >= view.frame.height - keyboardHeight {
+            view.frame.origin.y = -((bottomTextFieldTopSpace.constant + bottomText.frame.height) - (view.frame.height - keyboardHeight))
         }
     }
     
@@ -193,15 +196,15 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
         let expectedBottomTextFieldYOverlapsWithToolbar = expectedBottomTextFieldY + bottomText.frame.height >= bottomText.frame.origin.y
         
         if expectedTopTextFieldYOverlapsWithNavigationBar  {
-            topTextTopSpace.constant = topNavigationBar.frame.height + textMargin
+            topTextFieldTopSpace.constant = topNavigationBar.frame.height + textMargin
         } else {
-            topTextTopSpace.constant = expectedTopTextFieldY
+            topTextFieldTopSpace.constant = expectedTopTextFieldY
         }
         
         if expectedBottomTextFieldYOverlapsWithToolbar {
-            bottomTextTopSpace.constant = bottomToolbar.frame.origin.y - bottomText.frame.height - textMargin
+            bottomTextFieldTopSpace.constant = bottomToolbar.frame.origin.y - bottomText.frame.height - textMargin
         } else {
-            bottomTextTopSpace.constant = expectedBottomTextFieldY
+            bottomTextFieldTopSpace.constant = expectedBottomTextFieldY
         }
     }
     
